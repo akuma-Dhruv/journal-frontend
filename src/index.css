@@ -1,0 +1,134 @@
+/* PAGE RESET */
+:root {
+  font-family: "Shadows Into Light", cursive;
+  line-height: 1.6;
+  font-weight: 400;
+  color: #3b372c;
+  background: #fdf7ec;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* BASE */
+body {
+  margin: 0;
+  padding: 0;
+  background: #fdf7ec;
+}
+
+/* NOTEBOOK WRITING PAGE */
+.notebook-container {
+  max-width: 950px;
+  margin: 60px auto;
+  padding: 40px 70px;
+  background: #fffdf8;
+  border-radius: 14px;
+  position: relative;
+  box-shadow: 0px 8px 18px rgba(0,0,0,0.08);
+  font-size: 20px;
+
+  /* notebook rules */
+  background-image: repeating-linear-gradient(
+    #fbf8f2 0px,
+    #fbf8f2 32px,
+    #e8e3d9 33px
+  );
+}
+
+/* LEFT NOTEBOOK MARGIN LINE */
+.notebook-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50px;
+  width: 2px;
+  height: 100%;
+  background: rgba(200,120,120,0.4);
+}
+
+/* SPIRAL BINDING */
+.notebook-container::after {
+  content: "";
+  position: absolute;
+  left: -30px;
+  top: 0;
+  height: 100%;
+  width: 30px;
+  background-image:
+    radial-gradient(circle at 10px 20px, #ccc 3px, transparent 4px),
+    radial-gradient(circle at 10px 60px, #ccc 3px, transparent 4px),
+    radial-gradient(circle at 10px 100px, #ccc 3px, transparent 4px),
+    radial-gradient(circle at 10px 140px, #ccc 3px, transparent 4px),
+    radial-gradient(circle at 10px 180px, #ccc 3px, transparent 4px),
+    radial-gradient(circle at 10px 220px, #ccc 3px, transparent 4px),
+    radial-gradient(circle at 10px 260px, #ccc 3px, transparent 4px),
+    radial-gradient(circle at 10px 300px, #ccc 3px, transparent 4px),
+    radial-gradient(circle at 10px 340px, #ccc 3px, transparent 4px);
+  background-repeat: repeat-y;
+}
+
+/* SECTION CARD */
+.section-card {
+  padding: 20px 24px;
+  background: rgba(255,255,255,0.8);
+  border-radius: 10px;
+  border: 1px dashed #cfc7b4;
+  margin-bottom: 28px;
+  animation: fadeIn 0.5s ease;
+  backdrop-filter: blur(2px);
+}
+
+.section-title {
+  font-family: "Caveat", cursive;
+  font-size: 28px;
+  margin-bottom: 12px;
+  color: #5a4d38;
+  cursor: pointer;
+}
+
+textarea, input {
+  background: transparent;
+  border: none;
+  width: 100%;
+  font-size: 20px;
+  resize: vertical;
+  outline: none;
+  line-height: 30px;
+}
+
+/* FADE ANIMATION */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* STICKY DATE HEADER */
+.sticky-header {
+  position: sticky;
+  top: 0;
+  background: #fffdf8;
+  padding: 14px 0;
+  font-size: 34px;
+  font-family: "Caveat", cursive;
+  border-bottom: 2px dashed #d9d2c1;
+  z-index: 20;
+}
+.signoff-btn {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  padding: 14px 28px;
+  font-size: 20px;
+  border-radius: 12px;
+  background: #f6efe1;
+  border: 2px dashed #c7bba3;
+  cursor: pointer;
+  font-family: "Inter", sans-serif;
+  color: #4a4234;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: 0.2s ease;
+}
+
+.signoff-btn:hover {
+  background: #efe7d8;
+  transform: translateY(-2px);
+}
